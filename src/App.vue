@@ -1,9 +1,9 @@
 <template>
-  <v-app>
-
+  <v-app class="d-flex">
     <Menu/>
-    <v-main>
-    </v-main>
+        <router-view/>
+        <v-main>
+        </v-main>
     <Footer/>
   </v-app>
 </template>

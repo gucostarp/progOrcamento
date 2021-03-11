@@ -27,19 +27,19 @@
           nav
           dense
         >
-          <v-list-item link>
+          <v-list-item link :to="'/clientes'">
             <v-list-item-icon>
               <v-icon>mdi-folder</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Clientes</v-list-item-title>
           </v-list-item>
-          <v-list-item link>
+          <v-list-item link :to="'/produtos'">
             <v-list-item-icon>
               <v-icon>mdi-account-multiple</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Produtos</v-list-item-title>
           </v-list-item>
-          <v-list-item link>
+          <v-list-item link :to="'/orcamentos'">
             <v-list-item-icon>
               <v-icon>mdi-star</v-icon>
             </v-list-item-icon>
@@ -47,6 +47,5 @@
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
-
   </div>
 </template>
