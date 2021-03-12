@@ -85,6 +85,8 @@
 <script>
 import Modal from '@/components/Modal.vue';
 
+const axios = require('axios');
+
 export default {
   data() {
     return {
@@ -100,26 +102,12 @@ export default {
     },
   },
   created() {
-    this.clientes = [
-      {
-        id: 1,
-        nome: 'UNESP Bauru',
-        cpfcnpj: '10.435.371/0001-50',
-        email: 'unesp@unesp.br',
-      },
-      {
-        id: 2,
-        nome: 'Universidade de São Paulo',
-        cpfcnpj: '20.225.314/0001-20',
-        email: 'usp@usp.br',
-      },
-      {
-        id: 3,
-        nome: 'UNAERP Universidade de Ribeirão Preto',
-        cpfcnpj: '15.684.124/0001-12',
-        email: 'unaerp@unaerp.br',
-      },
-    ];
+    axios.get('http://localhost:3000/clientes')
+      .then((response) => {
+        // handle success
+        // console.log(response);
+        this.clientes = response.data;
+      });
   },
 };
 </script>

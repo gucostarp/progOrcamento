@@ -73,6 +73,8 @@
 <script>
 import Modal from '@/components/Modal.vue';
 
+const axios = require('axios');
+
 export default {
   data() {
     return {
@@ -88,24 +90,12 @@ export default {
     },
   },
   created() {
-    this.produtos = [
-      {
-        id: 1,
-        referencia: 'SLB001',
-        nome: 'Bebedouro para Ratos',
-        descricao: 'Bebedouro confeccionado em Vidro. Não Acompanha o bico e rolha.',
-        preco: 40.00,
-        garantia: '1 mes',
-      },
-      {
-        id: 2,
-        referencia: 'SLP020',
-        nome: 'Caixa de Skinner Ethernet',
-        descricao: 'A Caixa de Skinner Ethernet Scienlabor é utilizada em laboratórios de psicologia experimental e seu funcionamento é baseado em estímulos visuais, auditivos e olfativos, que elicidam um comportamento operante, fundamentado em três procedimentos: reforço, punição e extinção.',
-        preco: 4800.00,
-        garantia: '3 meses',
-      },
-    ];
+    axios.get('http://localhost:3000/produtos')
+      .then((response) => {
+        // handle success
+        // console.log(response);
+        this.produtos = response.data;
+      });
   },
 };
 </script>

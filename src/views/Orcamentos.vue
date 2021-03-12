@@ -19,12 +19,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="produto in produtos" :key="produto.id">
-          <td>{{ produto.id}}</td>
-          <td>{{ produto.cliente}}</td>
-          <td>{{ produto.produto }}</td>
-          <td>{{ produto.valor }}</td>
-          <td>{{ produto.itens }}</td>
+        <tr v-for="orcamento in orcamentos" :key="orcamento.id">
+          <td>{{ orcamento.id}}</td>
+          <td>{{ orcamento.cliente}}</td>
+          <td>{{ orcamento.produto }}</td>
+          <td>{{ orcamento.valor }}</td>
+          <td>{{ orcamento.itens }}</td>
           <td>
             <select class="form-select-sm" aria-label="Selecione">
               <option>Selecione</option>
@@ -70,10 +70,12 @@
 <script>
 import Modal from '@/components/Modal.vue';
 
+const axios = require('axios');
+
 export default {
   data() {
     return {
-      produtos: [],
+      orcamentos: [],
     };
   },
   components: {
@@ -85,24 +87,12 @@ export default {
     },
   },
   created() {
-    this.produtos = [
-      {
-        id: 1,
-        cliente: 'Cliente A',
-        produto: 'Caixa',
-        valor: 15000,
-        itens: 4,
-      },
+    axios.get('http://localhost:3000/orcamentos')
+      .then((response) => {
+        // handle success
 
-      {
-        id: 2,
-        cliente: 'Cliente B',
-        produto: 'Estante',
-        valor: 5000,
-        itens: 2,
-      },
-
-    ];
+        this.orcamentos = response.data;
+      });
   },
 };
 </script>
