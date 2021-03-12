@@ -16,14 +16,6 @@
         <router-link class="nav-item nav-link" to="/clientes">Clientes</router-link>
         <router-link class="nav-item nav-link" to="/produtos">Produtos</router-link>
         <router-link class="nav-item nav-link" to="/orcamentos">Orçamentos</router-link>
-
-        <input
-          class="form-control-sm me-2"
-          type="search"
-          placeholder="Buscar"
-          aria-label="Buscar"
-        />
-        <button class="btn-sm btn-outline-success" type="submit">Buscar</button>
       </div>
     </div>
   </nav>

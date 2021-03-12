@@ -1,19 +1,18 @@
 <template>
-  <div id="app" class="container">
-    <div class="row">
+
+  <div id="app" class="container-fluid">
+    <div class="container-fluid mb-4" style="text-align: left;">
+    </div>
+    <div class="container-fluid" style="text-align: left;">
+      <img src="./assets/logo.png" width= "20%" alt="">
+    </div>
+    <div class="container-fluid">
       <Header/>
     </div>
-    <div class="row">
+    <div class="container-fluid">
       <router-view/>
     </div>
 
-     <!-- <div id="nav">
-
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div> -->
   </div>
 </template>
 

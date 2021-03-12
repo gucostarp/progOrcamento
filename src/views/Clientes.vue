@@ -1,23 +1,30 @@
 <template>
   <div class="about">
+    <div class="col-lg-12 mb-3" style="text-align: right;">
+    </div>
+    <div class="col-lg-12 mb-3" style="text-align: right;">
+    <button type="button" class="btn btn-success" data-bs-toggle="modal"
+            data-bs-target="#myModal">Inserir</button>
+  </div>
+
     <table class="table">
       <thead>
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Nome</th>
-          <th scope="col">CPF</th>
-          <th scope="col">Idade</th>
-          <th scope="col">Ação</th>
+          <th scope="col">CPF/CNPJ</th>
+          <th scope="col">Email</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="cliente in clientes" :key="cliente.id">
           <td>{{ cliente.id}}</td>
           <td>{{ cliente.nome }}</td>
-          <td>{{ cliente.cpf }}</td>
-          <td>{{ cliente.idade }}</td>
+          <td>{{ cliente.cpfcnpj }}</td>
+          <td>{{ cliente.email }}</td>
           <td>
             <select class="form-select-sm" aria-label="Selecione">
+              <option>Selecione</option>
               <option>Excluir</option>
               <option>Alterar</option>
             </select>
@@ -25,35 +32,92 @@
         </tr>
       </tbody>
     </table>
-  </div>
+    <Modal titulo="Inserir Cliente">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nome</span>
+        <input type="text" class="form-control" placeholder="Nome Completo"
+                aria-label="Nome" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">CPF/CNPJ</span>
+        <input type="text" class="form-control" placeholder="CPF ou CNPJ"
+                aria-label="CPF" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2">Email</span>
+        <input type="text" class="form-control" placeholder="Email"
+                aria-label="Email" aria-describedby="basic-addon2">
+      </div>
+
+      <label for="basic-url" class="form-label">Endereço</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon3">Rua</span>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">Bairro</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">Cidade</span>
+        <input type="text" class="form-control" placeholder="" aria-label="Username">
+        <span class="input-group-text">Estado</span>
+        <input type="text" class="form-control" placeholder="" aria-label="Server">
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">CEP</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+      </div>
+
+      <div class="input-group">
+        <span class="input-group-text">Observação</span>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+      </div>
+    </Modal>
+</div>
 </template>
 
 <script>
+import Modal from '@/components/Modal.vue';
+
 export default {
   data() {
     return {
       clientes: [],
     };
   },
+  components: {
+    Modal,
+  },
+  methods: {
+    inserirProduto() {
+
+    },
+  },
   created() {
     this.clientes = [
       {
         id: 1,
-        nome: 'andré',
-        cpf: '12313153',
-        idade: 33,
+        nome: 'UNESP Bauru',
+        cpfcnpj: '10.435.371/0001-50',
+        email: 'unesp@unesp.br',
       },
       {
         id: 2,
-        nome: 'gustavo',
-        cpf: '23424',
-        idade: 36,
+        nome: 'Universidade de São Paulo',
+        cpfcnpj: '20.225.314/0001-20',
+        email: 'usp@usp.br',
       },
       {
         id: 3,
-        nome: 'bola',
-        cpf: '3444',
-        idade: 26,
+        nome: 'UNAERP Universidade de Ribeirão Preto',
+        cpfcnpj: '15.684.124/0001-12',
+        email: 'unaerp@unaerp.br',
       },
     ];
   },

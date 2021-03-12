@@ -1,12 +1,17 @@
 <template>
   <div class="about">
+    <div class="col-lg-12 mb-3" style="text-align: right;">
+    </div>
+    <div class="col-lg-12 mb-3" style="text-align: right;">
     <button type="button" class="btn btn-success" data-bs-toggle="modal"
             data-bs-target="#myModal">Inserir</button>
-    <!-- <button type="button" Launch modal</button> -->
+  </div>
+
     <table class="table">
       <thead>
         <tr>
           <th scope="col">Id</th>
+          <th scope="col">Referência</th>
           <th scope="col">Produto</th>
           <th scope="col">Descrição</th>
           <th scope="col">Preço</th>
@@ -17,12 +22,14 @@
       <tbody>
         <tr v-for="produto in produtos" :key="produto.id">
           <td>{{ produto.id}}</td>
+          <td>{{ produto.referencia}}</td>
           <td>{{ produto.nome }}</td>
           <td>{{ produto.descricao }}</td>
           <td>{{ produto.preco }}</td>
           <td>{{ produto.garantia }}</td>
           <td>
             <select class="form-select-sm" aria-label="Selecione">
+              <option>Selecione</option>
               <option>Excluir</option>
               <option>Alterar</option>
             </select>
@@ -32,50 +39,33 @@
     </table>
     <Modal titulo="Inserir Produto">
       <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Referência</span>
+        <input type="text" class="form-control" placeholder="Código de Referência"
+                aria-label="Nome" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Nome</span>
-        <input type="text" class="form-control" placeholder="Nome Completo"
+        <input type="text" class="form-control" placeholder="Nome do Produto"
                 aria-label="Nome" aria-describedby="basic-addon1">
       </div>
 
       <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">CPF</span>
-        <input type="text" class="form-control" placeholder="CPF"
+        <span class="input-group-text mb-3">Descrição</span>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">R$</span>
+        <input type="text" class="form-control" placeholder="Digite o Valor do Produto"
                 aria-label="CPF" aria-describedby="basic-addon1">
       </div>
 
       <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon2">Email</span>
-        <input type="text" class="form-control" placeholder="Email"
+        <span class="input-group-text" id="basic-addon2">Garantia</span>
+        <input type="text" class="form-control" placeholder="Digite a Garantia"
                 aria-label="Email" aria-describedby="basic-addon2">
       </div>
 
-      <label for="basic-url" class="form-label">Endereço</label>
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon3">Rua</span>
-        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-      </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text">Bairro</span>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-      </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text">Cidade</span>
-        <input type="text" class="form-control" placeholder="" aria-label="Username">
-        <span class="input-group-text">Estado</span>
-        <input type="text" class="form-control" placeholder="" aria-label="Server">
-      </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text">CEP</span>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-      </div>
-
-      <div class="input-group">
-        <span class="input-group-text">Observação</span>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
-      </div>
     </Modal>
   </div>
 </template>
@@ -94,25 +84,26 @@ export default {
   },
   methods: {
     inserirProduto() {
-      // const myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
-      // myModal.show();
+
     },
   },
   created() {
     this.produtos = [
       {
         id: 1,
-        nome: 'caixa',
-        descricao: 'jsdhajshdjkahk',
-        preco: 1200,
-        garantia: '3 meses',
+        referencia: 'SLB001',
+        nome: 'Bebedouro para Ratos',
+        descricao: 'Bebedouro confeccionado em Vidro. Não Acompanha o bico e rolha.',
+        preco: 40.00,
+        garantia: '1 mes',
       },
       {
         id: 2,
-        nome: 'Penis',
-        descricao: 'hfjashdjahs',
-        preco: 1.5,
-        garantia: '1 mes',
+        referencia: 'SLP020',
+        nome: 'Caixa de Skinner Ethernet',
+        descricao: 'A Caixa de Skinner Ethernet Scienlabor é utilizada em laboratórios de psicologia experimental e seu funcionamento é baseado em estímulos visuais, auditivos e olfativos, que elicidam um comportamento operante, fundamentado em três procedimentos: reforço, punição e extinção.',
+        preco: 4800.00,
+        garantia: '3 meses',
       },
     ];
   },
