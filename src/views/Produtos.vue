@@ -61,6 +61,12 @@
       </div>
 
       <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Imagem</span>
+        <input type="text" class="form-control" placeholder="Selecione uma foto"
+                aria-label="CPF" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon2">Garantia</span>
         <input type="text" class="form-control" placeholder="Digite a Garantia"
                 aria-label="Email" aria-describedby="basic-addon2">

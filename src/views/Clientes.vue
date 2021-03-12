@@ -40,20 +40,45 @@
       </div>
 
       <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Contato</span>
+        <input type="text" class="form-control" placeholder="Contato"
+                aria-label="Nome" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Departamento</span>
+        <input type="text" class="form-control" placeholder="Departamento"
+                aria-label="Nome" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">CPF/CNPJ</span>
         <input type="text" class="form-control" placeholder="CPF ou CNPJ"
                 aria-label="CPF" aria-describedby="basic-addon1">
       </div>
 
       <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon2">Email</span>
-        <input type="text" class="form-control" placeholder="Email"
+        <span class="input-group-text" id="basic-addon2">Insc. Mun.</span>
+        <input type="text" class="form-control" placeholder=""
+                aria-label="Email" aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">Insc. Est.</span>
+        <input type="text" class="form-control" placeholder=""
                 aria-label="Email" aria-describedby="basic-addon2">
       </div>
 
-      <label for="basic-url" class="form-label">Endereço</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2">Email</span>
+        <input type="text" class="form-control" placeholder="Email"
+                aria-label="Email" aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">Telefone</span>
+        <input type="text" class="form-control" placeholder="Telefone"
+                aria-label="Email" aria-describedby="basic-addon2">
+      </div>
+
+      <label for="basic-url" class="form-label"><b>Endereço</b></label>
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon3">Rua</span>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        <span class="input-group-text" id="basic-addon3">Nº</span>
         <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
       </div>
 
