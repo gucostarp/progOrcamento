@@ -1,6 +1,9 @@
 <template>
   <div class="about">
-    <div class="col-lg-12 mb-3" style="text-align: right;">
+    <div class="col-lg-12 mb-3" style="text-align: left;">
+    </div>
+    <div class="col-lg-12 mb-3" style="text-align: left;">
+    <h4>Cadastro de Clientes</h4>
     </div>
     <div class="col-lg-12 mb-3" style="text-align: right;">
     <button type="button" class="btn btn-success" data-bs-toggle="modal"

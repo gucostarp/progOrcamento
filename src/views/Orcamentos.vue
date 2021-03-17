@@ -1,5 +1,10 @@
 <template>
   <div class="about">
+    <div class="col-lg-12 mb-3" style="text-align: left;">
+    </div>
+    <div class="col-lg-12 mb-3" style="text-align: left;">
+    <h4>Cadastro de Orçamentos</h4>
+    </div>
     <div class="col-lg-12 mb-3" style="text-align: right;">
     </div>
     <div class="col-lg-12 mb-3" style="text-align: right;">
